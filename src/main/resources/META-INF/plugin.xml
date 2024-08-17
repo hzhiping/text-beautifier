@@ -12,6 +12,8 @@
     <description>
         <![CDATA[
             一个简单的文本美化的插件，该插件位于 Tools 菜单的 TextBeautifier，点击即可对选中的文本进行美化。
+            对应的源码地址：https://github.com/hzhiping/text-beautifier
+            欢迎完善，祝大家使用愉快。
          ]]>
     </description>
 
