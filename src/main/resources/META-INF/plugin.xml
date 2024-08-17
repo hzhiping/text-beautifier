@@ -1,0 +1,40 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- 插件的唯一 ID -->
+    <id>com.hzhiping.text-beautifier</id>
+
+    <!-- 插件名称 -->
+    <name>text-beautifier</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="23955637@qq.com" url="https://www.baidu.com">hzhiping</vendor>
+
+    <description>
+        <![CDATA[
+            插件描述。A displayed Vendor name or Organization ID displayed on the Plugins Page.
+         ]]>
+    </description>
+
+    <change-notes>
+        <![CDATA[
+            变更记录。
+         ]]>
+    </change-notes>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- 插件扩展点 -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+
+    <actions>
+        <action id="TextBeautifier" class="com.hzhiping.TextBeautifierAction" text="TextBeautifier"
+                description="文本美化">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+
+        </action>
+    </actions>
+</idea-plugin>
