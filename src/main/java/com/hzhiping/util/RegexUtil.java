@@ -101,8 +101,8 @@ public class RegexUtil {
                 input = matcher.replaceAll("$1 $2 ");
             }
         }
-        // 连续两个空格替换成一个空格
-        input = input.replaceAll(" {2,}", " ");
+        // 连续两个空格替换成一个空格【除了开头】
+        input = input.replaceAll("^(\\s*)", "$1").replaceAll("(?<=\\S)\\s+(?=\\S)", " ");
         // 去掉中文之间的多余空格
         Pattern chinesePatternWithBlank = Pattern.compile("([\\u4e00-\\u9fa5])\\s+([\\u4e00-\\u9fa5])");
         Matcher chineseMatcher = chinesePatternWithBlank.matcher(input);
