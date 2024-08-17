@@ -19,7 +19,11 @@
 
     <change-notes>
         <![CDATA[
-
+            1.0.2:
+                1、添加快捷键 ctrl shift L
+                2、一些特殊字符的识别，比如 +、-、= 等等
+            1.0.1:
+                2、插件初稿使用
          ]]>
     </change-notes>
 
@@ -36,7 +40,8 @@
         <action id="TextBeautifier" class="com.hzhiping.TextBeautifierAction" text="TextBeautifier"
                 description="选中文本之后点击，即可进行文本美化，有问题请联系 23955637@qq.com 处理。">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
-
+            <!-- 添加快捷键 -->
+            <keyboard-shortcut first-keystroke="ctrl shift L" keymap="$default"></keyboard-shortcut>
         </action>
     </actions>
 </idea-plugin>
