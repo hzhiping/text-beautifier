@@ -12,8 +12,8 @@ import java.util.regex.Pattern;
 public class RegexUtil {
 
     public static void main(String[] args) {
-        System.out.println(autoCorrect("//你 好，@世$界！I Love You，帮#我Test一下^这个*对不对。\n" +
-                ",中文，hello world,[好的]好的"));
+        System.out.println(autoCorrect("//你 好，@世$界！I Love You，帮#我Test一下^这个*对+不=对。\n" +
+                ",中文，hello world,[好的] “好的” 好的"));
     }
 
     /**
@@ -29,10 +29,8 @@ public class RegexUtil {
         String englishChar = "([0-9a-zA-Z])";
         // 英文符号范围，FIXME：待完善
         String englishSymbol = "([,\\-.?!:'\";(){}\\[\\]])";
-        // 中文符号范围，FIXME：待完善
-        String chineseSymbol = "([\\u3002\\uff1b\\uff0c\\uff1a\\u201c\\u201d\\uff08\\uff09\\u3001\\uff1f\\u300a\\u300b])";
         // 英文特殊字符范围，FIXME：待完善
-        String englishSpacialSymbol = "([/*&%$#@^<>\\[\\]{}()])";
+        String englishSpacialSymbol = "([/*&%$#@^<>{}()+=-\\[\\]])";
         // 遇到中文加上英文字符的，加空格
         Pattern pattern1 = Pattern.compile(chineseChar + englishChar);
         Matcher matcher1 = pattern1.matcher(input);
