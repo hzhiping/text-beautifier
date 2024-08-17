@@ -4,20 +4,20 @@
     <id>com.hzhiping.text-beautifier</id>
 
     <!-- 插件名称 -->
-    <name>text-beautifier</name>
+    <name>Text-Beautifier</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
     <vendor email="23955637@qq.com" url="https://www.baidu.com">hzhiping</vendor>
 
     <description>
         <![CDATA[
-            插件描述。A displayed Vendor name or Organization ID displayed on the Plugins Page.
+            一个简单的文本美化的插件，该插件位于 Tools 菜单的 TextBeautifier，点击即可对选中的文本进行美化。
          ]]>
     </description>
 
     <change-notes>
         <![CDATA[
-            变更记录。
+
          ]]>
     </change-notes>
 
@@ -32,7 +32,7 @@
 
     <actions>
         <action id="TextBeautifier" class="com.hzhiping.TextBeautifierAction" text="TextBeautifier"
-                description="文本美化">
+                description="选中文本之后点击，即可进行文本美化，有问题请联系 23955637@qq.com 处理。">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
 
         </action>

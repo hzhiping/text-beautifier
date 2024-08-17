@@ -2,10 +2,15 @@ plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.9.24"
     id("org.jetbrains.intellij") version "1.17.3"
+    id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
+//shadowJar {
+//    archiveBaseName.set("${project.name}.jar")
+//}
+
 group = "com.hzhiping"
-version = "1.0"
+version = "1.0.1"
 
 repositories {
     // mavenCentral()
@@ -43,7 +48,7 @@ tasks {
 
     }
 
-    // 添加以下内容，解决运行时控制台中文乱码，字符编码为UTF-8
+    // 添加以下内容，解决运行时控制台中文乱码，字符编码为 UTF-8
     withType<JavaExec> {
         jvmArgs = listOf("-Dfile.encoding=UTF-8", "-Dsun.stdout.encoding=UTF-8", "-Dsun.stderr.encoding=UTF-8")
     }
