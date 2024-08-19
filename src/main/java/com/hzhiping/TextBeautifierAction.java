@@ -36,7 +36,7 @@ public class TextBeautifierAction extends AnAction {
         // 为空不做任何处理
         if (StrUtil.isBlank(selectedText)) return;
         Document document = editor.getDocument();
-        System.out.println("-->输出相关的内容");
+        System.out.println("--> 输出相关的内容");
         // 获取文本的开始和结束位置，用新的字符串替换旧的
         WriteCommandAction.runWriteCommandAction(action.getData(PlatformDataKeys.PROJECT), () -> {
             String result = RegexUtil.autoCorrect(selectedText);

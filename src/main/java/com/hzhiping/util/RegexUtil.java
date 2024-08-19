@@ -2,7 +2,6 @@ package com.hzhiping.util;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,30 +14,8 @@ import java.util.regex.Pattern;
 public class RegexUtil {
 
     public static void main(String[] args) {
-        // 中文字符
-        String chineseChars = "你好世界大家早上好";
-        // 英文字符
-        String englishChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        // 中文符号
-        String chineseSymbols = "，。！？【】《》";
-        // 英文符号
-        String englishSymbols = "!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?";
-
-        // 合并所有字符
-        String allChars = chineseChars + englishChars + chineseSymbols + englishSymbols;
-
-        // 随机生成的文本长度
-        int textLength = 1000;
-        StringBuilder randomText = new StringBuilder(textLength);
-
-        Random random = new Random();
-        for (int i = 0; i < textLength; i++) {
-            int index = random.nextInt(allChars.length());
-            char randomChar = allChars.charAt(index);
-            randomText.append(randomChar);
-        }
-        System.out.println("--> 美化之前：" + randomText.toString());
-        System.out.println("--> 美化之后：" + autoCorrect(randomText.toString()));
+        String text = "text你好，我是你die，\n" + "    hello+Test=helloTest";
+        System.out.println(autoCorrect(text));
     }
 
     /**
@@ -102,10 +79,31 @@ public class RegexUtil {
             }
         }
         // 连续两个空格替换成一个空格【除了开头】
-        input = input.replaceAll("^(\\s*)", "$1").replaceAll("(?<=\\S)\\s+(?=\\S)", " ");
+        String[] split = input.split("\n");
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < split.length; i++) {
+            String begin = extractLeadingSpaces(split[i]);
+            String subString = split[i].substring(begin.length());
+            String replacedStr = begin + subString.replaceAll("\\s{2}", " ");
+            result.append(replacedStr);
+            if (i != split.length - 1) {
+                result.append("\n");
+            }
+        }
+        input = result.toString();
         // 去掉中文之间的多余空格
         Pattern chinesePatternWithBlank = Pattern.compile("([\\u4e00-\\u9fa5])\\s+([\\u4e00-\\u9fa5])");
         Matcher chineseMatcher = chinesePatternWithBlank.matcher(input);
         return chineseMatcher.replaceAll("$1$2");
+    }
+
+    public static String extractLeadingSpaces(String input) {
+        // 使用正则表达式提取开头的空格
+        // ^\\s* 表示从字符串开始位置匹配零个或多个空白字符
+        Matcher matcher = Pattern.compile("^\\s*").matcher(input);
+        if (matcher.find()) {
+            return matcher.group();
+        }
+        return "";
     }
 }
