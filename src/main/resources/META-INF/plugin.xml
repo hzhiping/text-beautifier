@@ -11,21 +11,23 @@
 
     <description>
         <![CDATA[
-            一个简单的文本美化的插件，该插件位于 Tools 菜单的 TextBeautifier，点击即可对选中的文本进行美化。
-            对应的源码地址：https://github.com/hzhiping/text-beautifier
-            欢迎完善，祝大家使用愉快。
+            一个简单的文本美化的插件，该插件位于 Tools 菜单的 TextBeautifier，点击即可对选中的文本进行美化。<br/>
+            对应的源码地址：https://github.com/hzhiping/text-beautifier <br/>
+            欢迎完善，祝大家使用愉快。<br/>
          ]]>
     </description>
 
     <change-notes>
         <![CDATA[
-            1.0.3:
-                1、代码重构以及一些相关的内容修改
-            1.0.2:
-                1、添加快捷键 ctrl shift L
-                2、一些特殊字符的识别，比如 +、-、= 等等
-            1.0.1:
-                2、插件初稿使用
+            1.0.4: <br/>
+                1、代码优化并修复多行文本美化自动换行问题 <br/>
+            1.0.3: <br/>
+                1、代码重构以及一些相关的内容修改 <br/>
+            1.0.2: <br/>
+                1、添加快捷键 ctrl shift L <br/>
+                2、一些特殊字符的识别，比如 +、-、= 等等 <br/>
+            1.0.1: <br/>
+                2、插件初稿使用 <br/>
          ]]>
     </change-notes>
 
