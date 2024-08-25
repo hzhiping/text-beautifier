@@ -5,9 +5,9 @@ plugins {
     id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
-//shadowJar {
-//    archiveBaseName.set("${project.name}.jar")
-//}
+// shadowJar {
+//  archiveBaseName.set("${project.name}.jar")
+// }
 
 group = "com.hzhiping"
 version = "1.0.4"
@@ -21,7 +21,7 @@ repositories {
 
 dependencies {
     // https://mvnrepository.com/artifact/cn.hutool/hutool-all
-    implementation("cn.hutool:hutool-all:5.8.31")
+    // implementation("cn.hutool:hutool-all:5.8.31")
 }
 
 // Configure Gradle IntelliJ Plugin

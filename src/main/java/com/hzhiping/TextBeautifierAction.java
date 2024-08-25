@@ -1,7 +1,5 @@
 package com.hzhiping;
 
-import cn.hutool.core.util.StrUtil;
-import cn.hutool.log.Log;
 import com.hzhiping.util.RegexUtil;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -10,7 +8,6 @@ import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
-import org.yaml.snakeyaml.internal.Logger;
 
 /**
  * 文本美化
@@ -34,7 +31,7 @@ public class TextBeautifierAction extends AnAction {
         SelectionModel selectionModel = editor.getSelectionModel();
         String selectedText = selectionModel.getSelectedText();
         // 为空不做任何处理
-        if (StrUtil.isBlank(selectedText)) return;
+        if (selectedText == null || selectedText.equalsIgnoreCase("")) return;
         Document document = editor.getDocument();
         System.out.println("--> 输出相关的内容");
         // 获取文本的开始和结束位置，用新的字符串替换旧的
